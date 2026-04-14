@@ -1,0 +1,47 @@
+# =============================================
+#   AntiCheat Configuration - Bukkit 1.21.1
+# =============================================
+
+settings:
+  # ── Fly detection ────────────────────────────────────────────────────────
+  # How many VL points before banning for fly
+  fly-vl-threshold: 3
+  # How many ticks between VL decay (reduces false positives)
+  vl-decay-ticks: 40
+  # Max upward velocity allowed per tick before flagging
+  max-upward-velocity: 0.42
+  # Extra leniency ticks after a jump before flagging
+  jump-grace-ticks: 6
+  # Extra leniency ticks after taking damage (knockback)
+  damage-grace-ticks: 10
+  # Leniency ticks after teleport
+  teleport-grace-ticks: 20
+  # Leniency ticks after joining
+  join-grace-ticks: 60
+
+  # ── Reach detection ──────────────────────────────────────────────────────
+  # VL points before banning for reach (accumulates per illegal hit)
+  reach-vl-threshold: 3
+  # Extra distance buffer on top of vanilla 3.0 blocks to compensate for lag
+  # Raise to 0.3–0.5 if high-ping players get false flagged
+  reach-lag-buffer: 0.0
+
+ban:
+  # Duration in days
+  duration-days: 30
+  # Message shown on the ban screen
+  reason: "&cYou have been banned from this server.\n\n&fReason: &cUsing a modified client\n\n&7Your ban expires in &f30 days&7."
+  # Broadcast message to online players when someone is banned
+  broadcast: "&8[&cAntiCheat&8] &f{player} &7has been banned for &cusing a modified client&7."
+
+messages:
+  prefix: "&8[&cAntiCheat&8] "
+  reload: "&aConfiguration reloaded successfully."
+  status-header: "&8--- &cAntiCheat Status &8---"
+  whitelist-add: "&aAdded {player} to the bypass whitelist."
+  whitelist-remove: "&cRemoved {player} from the bypass whitelist."
+  no-permission: "&cYou do not have permission to use this command."
+
+debug:
+  # Set to true to log violations to console (useful for tuning thresholds)
+  enabled: false
